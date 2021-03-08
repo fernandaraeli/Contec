@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="utf-8">
+	<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	
+	<title>Posição OS</title>
+</head>
+
+<body>
+
+    <h1>Pesquisar OS</h1>
+    
+	<form action="pesquisar" method="post">
+		<input name="pesquisaordem">
+		<input type="submit" value="pesquisar">
+		<a href="/" class="btn btn-primary btn-sm">Cancelar</a>	
+	</form>	
+	
+	<div class="table-responsive">
+	    <table class="table table-striped ">	             
+             <tr>
+	            <th>Id</th>
+	            <th>Ordem Serviço</th>
+	            <th>Posição</th>
+	            
+	         </tr>
+	         	<tr th:each="cadastro : ${cadastros}">
+		       		<td><span th:text="${cadastro.id}"></span></td>
+			  		<td><span th:text="${cadastro.os}"></span></td>
+					<td><span th:text="${cadastro.posicao}"></span></td>
+						
+	            </tr>
+                  
+	     </table>
+	 </div>
+</body>
+
+</html>
