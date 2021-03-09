@@ -9,7 +9,7 @@ import com.contec.contec.models.Cadastro;
 @Repository
 public interface cadastroRepository extends CrudRepository<Cadastro, String> {
 	
-	@Query("select campo from Cadastro campo where campo.os like %?1%")
+	@Query("select campo from Cadastro campo where campo.os = ?1 order by id desc")
 	Iterable<Cadastro> findByOS(String os);
 	
 	
