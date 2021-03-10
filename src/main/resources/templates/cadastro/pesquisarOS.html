@@ -54,14 +54,12 @@
 						<div class="table-responsive">
 	    					<table class="table table-striped ">	             
             	 				<tr>
-	            					<th>Id</th>
 	            					<th>Ordem Serviço</th>
 	            					<th>Posição</th>
 	            
 	         					</tr>
 	         				<tr th:each="cadastro : ${cadastros}">
-		       						<td><span th:text="${cadastro.id}"></span></td>
-			  						<td><span th:text="${cadastro.os}"></span></td>
+		       						<td><span th:text="${cadastro.os}"></span></td>
 									<td><span th:text="${cadastro.posicao}"></span></td>
 	            			</tr>
 	     					</table>  
